@@ -20,12 +20,23 @@
             padding: 10px 0;
             color: white;
             font-size: 24px;
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        .logo {
+            margin-left: 20px;
+        }
+        .logo img {
+            max-width: 100px;
+            height: auto;
         }
         nav {
             display: flex;
             justify-content: center;
             background-color: #002a80;
             padding: 10px;
+            flex-grow: 1;
         }
         nav a {
             color: white;
@@ -35,27 +46,41 @@
         nav a:hover {
             background-color: #001f5c;
         }
-        .logo {
-            margin-top: 20px;
+        .carousel {
+            margin: 50px auto;
+            width: 80%;
+            max-width: 600px;
+            position: relative;
         }
-        img {
-            max-width: 150px;
+        .carousel img {
+            width: 100%;
             height: auto;
+            border-radius: 10px;
+        }
+        .carousel-text {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
-    <header>NexGen Academy</header>
-    <nav>
-        <a href="#">Home</a>
-        <a href="#about">About Us</a>
-        <a href="#courses">Courses</a>
-        <a href="#contact">Contact</a>
-    </nav>
-    <div class="logo">
-        <a href="https://nasa306.github.io/School-stuff/">
-            <img src="https://raw.githubusercontent.com/nasa306/School-stuff/refs/heads/main/SCHOOL_LOGO-removebg-preview.png" alt="NexGen Academy Logo">
-        </a>
+    <header>
+        <div class="logo">
+            <a href="https://nasa306.github.io/School-stuff/">
+                <img src="https://raw.githubusercontent.com/nasa306/School-stuff/refs/heads/main/SCHOOL_LOGO-removebg-preview.png" alt="NexGen Academy Logo">
+            </a>
+        </div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#about">About Us</a>
+            <a href="#courses">Courses</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+    <div class="carousel">
+        <img src="https://miro.medium.com/v2/da:true/resize:fit:1200/0*v1abhu5N-bIDy-SN" alt="Carousel Image">
+        <div class="carousel-text">Empowering the new generation</div>
     </div>
 </body>
 </html>
