@@ -1,33 +1,39 @@
-  document.getElementById("subscription-form").addEventListener("submit", function(event) {
-    event.preventDefault(); // Prevents default form submission
+document.getElementById("subscription-form").addEventListener("submit", function (event) {
+  event.preventDefault(); // Prevents default form submission
 
-    let email = document.getElementById("email").value;
-    let loading = document.querySelector(".loading");
-    let sentMessage = document.querySelector(".sent-message");
-    let errorMessage = document.querySelector(".error-message");
+  const email = document.getElementById("email").value;
+  const loading = document.querySelector(".loading");
+  const sentMessage = document.querySelector(".sent-message");
+  const errorMessage = document.querySelector(".error-message");
 
-    loading.style.display = "block";
-    sentMessage.style.display = "none";
-    errorMessage.style.display = "none";
+  // Show loading state
+  loading.style.display = "block";
+  sentMessage.style.display = "none";
+  errorMessage.style.display = "none";
 
-    let googleAppsScriptUrl = "https://script.google.com/macros/s/AKfycbxlA-q2Li6cJNRw45qpC77JSO3DLH9eLs11JHSwb5uHTKNaK0Ai2hGZrnXC_9yQ4eI5Pg/exec";
+  const googleAppsScriptUrl = "https://script.google.com/macros/s/AKfycby7eGQsW-PLvAOVXmImZHCFyzKVL1n2KjxcljSEq7g1qCwRg_IOxjQzo1-_mciCMl1cSw/exec";
 
-    fetch(googleAppsScriptUrl, {
-      method: "POST",
-      body: JSON.stringify({ email: email }),
-      headers: { "Content-Type": "application/json" }
-    }).then(response => response.text())
-    .then(data => {
+  fetch(googleAppsScriptUrl, {
+    method: "POST",
+    body: JSON.stringify({ email: email }),
+    headers: { "Content-Type": "text/plain" } // Use text/plain to avoid CORS preflight
+  })
+    .then((response) => {
+      if (!response.ok) throw new Error("Network response was not ok");
+      return response.text(); // Parse response as text
+    })
+    .then((data) => {
       loading.style.display = "none";
       if (data.trim() === "Success") {
         sentMessage.style.display = "block";
-        document.getElementById("subscription-form").reset();
+        document.getElementById("subscription-form").reset(); // Reset form
       } else {
         errorMessage.style.display = "block";
       }
-    }).catch(error => {
+    })
+    .catch((error) => {
       loading.style.display = "none";
       errorMessage.style.display = "block";
       console.error("Error:", error);
     });
-  });
+});
