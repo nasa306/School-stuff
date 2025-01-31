@@ -26,6 +26,7 @@ document.getElementById("subscription-form").addEventListener("submit", function
       if (data.trim() === "Success") {
         sentMessage.style.display = "block";
         document.getElementById("subscription-form").reset(); // Reset form
+        window.location.href = "https://nasa306.github.io/School-stuff/thank-you.html"
       } else {
         errorMessage.style.display = "block";
       }
@@ -34,6 +35,6 @@ document.getElementById("subscription-form").addEventListener("submit", function
       loading.style.display = "none";
       errorMessage.style.display = "block";
       console.error("Error:", error);
+      window.location.href = "https://nasa306.github.io/School-stuff/thank-you.html"
     });
 });
-window.location.href = "https://nasa306.github.io/School-stuff/thank-you.html";
