@@ -10,7 +10,7 @@
     sentMessage.style.display = "none";
     errorMessage.style.display = "none";
 
-    let googleAppsScriptUrl = "https://script.google.com/macros/s/AKfycbw4TPeQj7dHlm53p2n24m-deddMP_fMOnmQjiUJBhtZiXKz8D4HZhYfy02S6sCiNuBD6Q/exec"; // Replace with your deployed URL
+    let googleAppsScriptUrl = "https://script.google.com/macros/s/AKfycby26Hv6s-13kjkDA3N9DWIee6e35ywi5Mr0PED5YT9YWESNWLeZjSAvuBrrlb-gWq778Q/exec";
 
     fetch(googleAppsScriptUrl, {
       method: "POST",
