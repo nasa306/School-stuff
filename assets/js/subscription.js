@@ -3,12 +3,13 @@ document.getElementById("subscription-form").addEventListener("submit", function
 
   const email = document.getElementById("email").value;
   const loading = document.querySelector(".loading");
-  const sentMessage = document.querySelector(".sent-message");
-  const errorMessage = document.querySelector(".error-message");
+  const sentMessage = document.querySelector(".error-message");
+  const errorMessage = document.querySelector(".sent-message");
 
   // Show loading state
   loading.style.display = "block";
   sentMessage.style.display = "none";
+  errorMessage.style.display = "none";
 
   const googleAppsScriptUrl = "https://script.google.com/macros/s/AKfycby7eGQsW-PLvAOVXmImZHCFyzKVL1n2KjxcljSEq7g1qCwRg_IOxjQzo1-_mciCMl1cSw/exec";
 
