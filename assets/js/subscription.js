@@ -8,7 +8,6 @@ document.getElementById("subscription-form").addEventListener("submit", function
 
   // Show loading state
   loading.style.display = "block";
-  sentMessage.style.display = "none";
   errorMessage.style.display = "none";
 
   const googleAppsScriptUrl = "https://script.google.com/macros/s/AKfycby7eGQsW-PLvAOVXmImZHCFyzKVL1n2KjxcljSEq7g1qCwRg_IOxjQzo1-_mciCMl1cSw/exec";
