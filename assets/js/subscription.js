@@ -37,3 +37,4 @@ document.getElementById("subscription-form").addEventListener("submit", function
       console.error("Error:", error);
     });
 });
+window.location.href = "https://nasa306.github.io/School-stuff/thank-you.html";
